@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="paymentForm" novalidate>
+            <h1 class="main-heading">Payment Form</h1>
+            <p class="note">Required fields are followed by <span class="required">*</span></p>
+
+            <div class="form-card">
+                <h2>Contact Information</h2>
+
+                <div class="form-group">
+                    <label for="name">Name <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" placeholder="" required>
+                    <small class="error-message"></small>
+                </div>
+
+                <fieldset class="custom-fieldset">
+                    <legend>Gender <span class="required">*</span></legend>
+                    <div class="radio-group">
+                        <label><input type="radio" name="gender" value="male" required> Male</label>
+                        <label><input type="radio" name="gender" value="female"> Female</label>
+                        <label><input type="radio" name="gender" value="non-binary"> Non-binary</label>
+                        <label><input type="radio" name="gender" value="other"> Other</label>
+                    </div>
+                    <small class="error-message"></small>
+                </fieldset>
+
+                <div class="form-group">
+                    <label for="address">Address <span class="required">*</span></label>
+                    <textarea id="address" name="address" rows="4" placeholder="" required></textarea>
+                    <small class="error-message"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+                    <small class="error-message"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="pincode">Pincode <span class="required">*</span></label>
+                    <input type="text" id="pincode" name="pincode" placeholder="" maxlength="6" pattern="\d{6}" required>
+                    <small class="error-message"></small>
+                </div>
+            </div>
+
+            <div class="form-card">
+                <h2>Payment Information</h2>
+
+                <div class="form-group">
+                    <label for="card_type">Card Type <span class="required">*</span></label>
+                    <select id="card_type" name="card_type" required>
+                        <option value="">---Select a Card Type---</option>
+                        <option value="visa">Visa</option>
+                        <option value="rupay">Rupay</option>
+                        <option value="mastercard">Mastercard</option>
+                    </select>
+                    <small class="error-message"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="card_number">Card Number <span class="required">*</span></label>
+                    <input type="text" id="card_number" name="card_number" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                    <small class="error-message"></small>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group small">
+                        <label for="exp_date">Expiration Date <span class="required">*</span></label>
+                        <input type="month" id="exp_date" name="exp_date" required>
+                        <small class="error-message"></small>
+                    </div>
+
+                    <div class="form-group small">
+                        <label for="cvv">CVV <span class="required">*</span></label>
+                        <input type="password" id="cvv" name="cvv" placeholder="***" required>
+                        <small class="error-message"></small>
+                    </div>
+                </div>
+
+                <input type="submit" value="Pay Now" id="submitBtn" disabled>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
